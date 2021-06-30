@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Hangman</title>
+    <meta name="description" content="Hungman.">
+
+    <!-- Required meta tags -->
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+ 
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Jomhuria&display=swap" rel="stylesheet">
+     
+     
+ 
+     <link rel="stylesheet" href="assets/style.css">
+    
+</head>
+<body>
+    <main>
+
+        
+
+        <div class="container min-vh-100">
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 ">
+                    <h1>Hangman</h1>
+                    <p>Choose the right letter</p>
+              <!--Tube-->
+            <svg height="250" width="200" class="fig">
+                <line x1="60" y1="20" x2="140" y2="20" />
+                <line x1="140" y1="20" x2="140" y2="50" />
+                <line x1="60" y1="20" x2="60" y2="230" />
+                <line x1="20" y1="230" x2="100" y2="230" />
+                <!--head-->
+
+                <circle cx="140" cy="70" r="20" class="figu" />
+
+                <!--body-->
+
+                <line x1="140" y1="90" x2="140" y2="150" class="figu"/>
+
+                <!--arms-->
+
+                <line x1="140" y1="120" x2="120" y2="100" class="figu"/>
+                <line x1="140" y1="120" x2="160" y2="100" class="figu"/>
+
+                <!--legs-->
+
+                <line x1="140" y1="150" x2="120" y2="180" class="figu"/>
+                <line x1="140" y1="150" x2="160" y2="180" class="figu"/>
+             </svg>
+
+             <div class="wrong">
+                    <p>Bad letter</p>
+                 <div id="wrong"></div>
+               
+             </div>
+             
+             <div class="world" id="world"></div>
+              <!--final-->
+
+        <div class="fin" id="fin">
+            <div class="fina">
+                <h3 id="mess"></h3>
+                <button id="play">Play Again!</button>
+            </div>
+        </div>
+        <!--notif-->
+        <div class="notif" id="notif">
+            <p>You have already tried this letter</p>
+        </div>
+
+        </div>
+        </div>
+        </div>
+       
+
+
+
+        <script src="assets/script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    </main>
+    
+</body>
+</html>

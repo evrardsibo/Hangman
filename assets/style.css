@@ -1,0 +1,119 @@
+
+/*body*/
+body {
+  background-image: linear-gradient(transparent 11px, rgba(220, 220, 200, 0.8) 12px, transparent 12px), linear-gradient(90deg, transparent 11px, rgba(220, 220, 200, 0.8) 12px, transparent 12px);
+  background-size: 100% 12px, 12px 100%;
+  font-family: 'Jomhuria', cursive;
+  font-size: 40px;
+  overflow: hidden;
+}
+
+/*figure*/
+.fig {
+  stroke: black;
+  stroke-width: 4px;
+  stroke-linecap: round;
+  fill: transparent;
+}
+/*
+/*header*/
+h1 {
+  margin-top: 20px;
+}
+h3{
+
+  color: aliceblue;
+}
+
+/*figure 1*/
+.figu {
+  display: none;
+}
+
+/*wrong*/
+.wrong {
+  position: absolute;
+  top: 20px;
+  right: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: right;
+}
+
+/*world*/
+.world {
+  bottom: 10px;
+  left: 50px;
+}
+
+/*letter*/
+.letter {
+  border-bottom: 3px solid black;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 40px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0px 3px;
+  height: 50px;
+  width: 20px;
+}
+.fin{
+  background-color: rgb(250, 224, 184 , 0.5);
+  display: none;
+  
+}
+/*fina*/
+.fina{
+  background-color: rgb(21, 21, 36);
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  
+}
+
+/*buutton*/
+
+.fina button{
+  cursor: pointer;
+}
+
+.fina button:active{
+  transform: scale(0.99);
+}
+
+.fina button:focus{
+  outline: 0;
+}
+
+/*notification*/
+.notif{
+  background-color:rgba(0,0,0, 0.3);
+  border-radius: 10px 10px 0 0;
+  padding: 15px 20px;
+  position: absolute;
+  bottom: -120px;
+  transition: transform  ease-in-out;
+  
+
+}
+
+.notif .afficher{
+  transform: translateY(-120px);
+}
+
+
+
+
+/*disp*/
+/*# sourceMappingURL=style.css.map */
