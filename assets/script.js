@@ -24,8 +24,8 @@ console.log(guessselect)
 
 function display() {
   
-  word.innerHTML = ` 
-      ${guessselect
+  word.innerHTML =  
+      guessselect
         .split('')
         .map(
             lettre => `
@@ -37,9 +37,9 @@ function display() {
         )
         .join('')
 
-    }
+    
 
-    `;
+    ;
     console.log(word.innerText)
 
     const wordinternal = word.innerText.replace(/\n/g,'');
@@ -56,9 +56,9 @@ function display() {
   //bad letter
 
  function updateBadword (){
-    wrong.innerHTML =`${badletterArr.map(letter =>  
-      `<span> ${letter} </span> ` )}
-    `
+    wrong.innerHTML =badletterArr.map(letter =>  
+      `<span> ${letter} </span> ` )
+    
     fig.forEach((partie , index) => {
 
       const error = badletterArr.length;
@@ -120,7 +120,7 @@ document.addEventListener('keydown', function(event) {
 
 
      }else{
-          if(badletterArr.includes(lett)){
+          if(!guessselect.includes(lett)){
             badletterArr.push(lett);
 
            updateBadword();
