@@ -1,5 +1,5 @@
 // varibles
-const world = document.getElementById("world");
+const wrod =document.getElementById("word");
 const wrong = document.getElementById("wrong");
 const play = document.getElementById("play");
 const fin = document.getElementById("fin");
@@ -9,28 +9,29 @@ const mess = document.getElementById("mess");
 // select all class
 
 const fig = document.querySelectorAll(".figu");
-// document.getElementById("fin").style.display = "flex";
 
 // guess word
 
 const guess = ['becode','charleroi', 'keller','javascript'];
-
 let guessselect = guess[Math.floor(Math.random()*guess.length)];
 
-const  goodletterArr = [ ];
-const  badletterArr = [ ];
+const  goodletterArr = [];
+const  badletterArr = [];
 
-// display world hidden
+console.log(guessselect)
+
+// display word hidden
 
 function display() {
-    world.innerHTML = ` 
-
-    ${guessselect
+  
+  word.innerHTML = ` 
+      ${guessselect
         .split('')
         .map(
             lettre => `
-                  <span class='letter'>
-                  ${goodletterArr.includes(lettre) ? lettre : ''}
+                  <span class="letter">
+                  ${goodletterArr.includes(lettre) ? lettre : 
+                    ''}
                   </span>
             `
         )
@@ -39,23 +40,24 @@ function display() {
     }
 
     `;
+    console.log(word.innerText)
 
-    const wordinternal = world.innerText.replace(/\n/g,'');
+    const wordinternal = word.innerText.replace(/\n/g,'');
 
-    console.log(world.innerText,wordinternal );
+    console.log(word.innerText, wordinternal);
 
-    if(wordinternal == guessselect){
-        mess.innerText ='Good job';
-        fin.style.display = 'block';
-      }
+    if(wordinternal  === guessselect){
+      mess.innerText ='Good job';
+      fin.style.display = 'flex';
+    }
 
 }
 
-//  // bad letter
+  //bad letter
 
  function updateBadword (){
-    wrong.innerHTML = `
-    ${badletterArr.map(letter =>  `<span> ${letter} </span> ` )}
+    wrong.innerHTML =`${badletterArr.map(letter =>  
+      `<span> ${letter} </span> ` )}
     `
     fig.forEach((partie , index) => {
 
@@ -72,86 +74,83 @@ function display() {
 
     if(badletterArr.length===fig.length){
 
-      mess.innerText = 'Sorry you lose! :('
+      mess.innerText = 'Sorry you lose!'
       fin.style.display = 'flex'
     }
 
 
   }
-
 // notif
 
 function dispnotif(){
   
 
-    notif.classList.add('display');
-  
-    setTimeout(() =>{
-  
-      notif.classList.remove('display')
-  
-    },2000);
-  }
+  notif.classList.add('display');
+
+  setTimeout(() =>{
+
+    notif.classList.remove('display')
+
+  },2000);
+}
 
 // // listen event keyboard
 
 
 document.addEventListener('keydown', function(event) {
   
-    if(event.keyCode >= 65 && event.keyCode <=90){
-   
-       const lett = event.key;
-  
-       if(guessselect.includes(lett)){
-  
-        if(!goodletterArr.includes(lett)){
-          goodletterArr.push(lett)
-  
-  
-          display()
-  
-        }else{
-  
-            dispnotif()
-  
-        }
-  
-  
-  
-       }else{
-            if(badletterArr.includes(lett)){
-              badletterArr.push(lett);
-  
-             updateBadword();
-  
-            }else{
-  
-              dispnotif()
-            }
-       }
-       
-  
-    }
-     
-    });
+  if(event.keyCode >= 65 && event.keyCode <=90){
+ 
+     const lett = event.key;
 
-//      // button
+     if(guessselect.includes(lett)){
+
+      if(!goodletterArr.includes(lett)){
+        goodletterArr.push(lett)
+
+
+        display()
+
+      }else{
+
+          dispnotif()
+
+      }
+
+
+
+     }else{
+          if(badletterArr.includes(lett)){
+            badletterArr.push(lett);
+
+           updateBadword();
+
+          }else{
+
+            dispnotif()
+          }
+     }
+     
+
+  }
+   
+  });
+
+   // button
 
 
 play.addEventListener('click',() =>{
 
-    goodletterArr.slice(0);
-    badletterArr.slice(0);
+  goodletterArr.slice(0);
+  badletterArr.slice(0);
 
-    guessselect = guess[Math.floor(Math.random()*guess.length)];
+  guessselect = guess[Math.floor(Math.random()*guess.length)];
 
-    display()
-    updateBadword();
-    fin.style.display ='none';
+  display()
+  updateBadword();
+  fin.style.display ='none';
 
 
 })
 
-
-
-display()
+  display()
